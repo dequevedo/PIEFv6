@@ -20,12 +20,12 @@
         <item>Reserva de sala</item>
         <item>Revisão de prova</item>
         <item>Prova substitutiva</item>
-        <item>Atestado de matrícula</item>
-        <item>Conteúdo programático de disciplina</item>
-        <item>Histórico escolar</item>
-        <item>Atestado de matrícula</item>
-        <item>Histórico escolar</item>
-        <item>Conteúdo programático de disciplina</item>
+        <item>Atestado de matrícula - Outros</item>
+        <item>Conteúdo programático de disciplina - Outros</item>
+        <item>Histórico escolar - Outros</item>
+        <item>Atestado de matrícula - Transferência</item>
+        <item>Histórico escolar - Transferência</item>
+        <item>Conteúdo programático de disciplina - Transferência</item>
 
     </string-array>
 </resources>
