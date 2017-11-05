@@ -2,16 +2,18 @@ package com.example.danielelvis.piefv6drawer;
 
 import android.app.Activity;
 import android.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class GerenciadorDeSolicitacao{
+public class GerenciadorDeSolicitacao extends _Default{
     private static final GerenciadorDeSolicitacao ourInstance = new GerenciadorDeSolicitacao();
 
     public static GerenciadorDeSolicitacao getInstance() {
@@ -30,7 +32,30 @@ public class GerenciadorDeSolicitacao{
     private GerenciadorDeSolicitacao() {
     }
 
-    public ArrayList<Solicitacao> getSolicitacoes() {
+    public ArrayList<Solicitacao> getSolicitacoes(String login) {
+            DB db = new DB();
+            ArrayList<Solicitacao> listaSolicitacao = new ArrayList<>();
+            try{
+                ResultSet resultSet = db.select("SELECT * FROM solicitacao WHEN login = '"+login+"'");
+                if(resultSet != null){
+                    while(resultSet.next()){
+                        Solicitacao obj = new Solicitacao(resultSet.getString("cod_solicitacao"),
+                                resultSet.getString("status"),
+                                resultSet.getString("ra_aluno"),
+                                resultSet.getString("data_atualizacao"),
+                                resultSet.getString("data_criacao"),
+                                resultSet.getString("codboleto"),
+                                resultSet.getString("codsecretario"),
+                                resultSet.getString("tipo"),
+                                resultSet.getString("texto"));
+                        listaSolicitacao.add(obj);
+                    }
+                }
+            }catch (Exception e) {
+                this.menssagem = e.getMessage();
+                Log.d("myTag", this.menssagem + " - This is my message");
+                this.status = false;
+            }
         return listaSolicitacoes;
     }
 
@@ -43,7 +68,7 @@ public class GerenciadorDeSolicitacao{
 
 
 
-    protected void FillSolicitacaoList(Activity a) {
+   /* protected void FillSolicitacaoList(Activity a) {
 
         final Activity activity = a;
 
@@ -73,7 +98,7 @@ public class GerenciadorDeSolicitacao{
                 //Do something, ex: display msg
                 Toast.makeText(activity.getApplicationContext(), "Clicked product id =" + view.getTag(), Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
 
-    }
+    }*/
 }

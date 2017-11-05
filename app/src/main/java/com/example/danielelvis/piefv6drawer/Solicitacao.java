@@ -1,27 +1,34 @@
 package com.example.danielelvis.piefv6drawer;
 
-import java.util.Date;
-
 public class Solicitacao {
     private int protocolo;
     private String status;
-    private Date dataAtualizacao;
-    private Date dataCriacao;
+    private int raAluno;
+    private String dataAtualizacao;
+    private String dataCriacao;
     private int codigoBoleto;
     private String tipo;
-    private int raAluno;
     private int codigoSecretario;
     private String mensagem;
 
-    public Solicitacao(int protocolo, String status, Date dataAtualizacao, Date dataCriacao, int codigoBoleto, String tipo, int raAluno, int codigoSecretario) {
-        this.protocolo = protocolo;
+    public Solicitacao(String protocolo,
+                       String status,
+                       String raAluno,
+                       String dataAtualizacao,
+                       String dataCriacao,
+                       String codigoBoleto,
+                       String codigoSecretario,
+                       String tipo,
+                       String mensagem) {
+        this.protocolo = Integer.parseInt(protocolo);
         this.status = status;
+        this.raAluno = Integer.parseInt(raAluno);
         this.dataAtualizacao = dataAtualizacao;
         this.dataCriacao = dataCriacao;
-        this.codigoBoleto = codigoBoleto;
+        this.codigoBoleto = Integer.parseInt(codigoBoleto);
+        this.codigoSecretario = Integer.parseInt(codigoSecretario);
         this.tipo = tipo;
-        this.raAluno = raAluno;
-        this.codigoSecretario = codigoSecretario;
+        this.mensagem = mensagem;
     }
 
     public int getProtocolo() {
@@ -40,19 +47,19 @@ public class Solicitacao {
         this.status = status;
     }
 
-    public Date getDataAtualizacao() {
+    public String getDataAtualizacao() {
         return dataAtualizacao;
     }
 
-    public void setDataAtualizacao(Date dataAtualizacao) {
+    public void setDataAtualizacao(String dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
     }
 
-    public Date getDataCriacao() {
+    public String getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Date dataCriacao) {
+    public void setDataCriacao(String dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
