@@ -20,7 +20,7 @@ public class GerenciadorDeSolicitacao extends _Default{
         return ourInstance;
     }
 
-    private ArrayList<Solicitacao> listaSolicitacoes = new ArrayList<Solicitacao>();
+    //private ArrayList<Solicitacao> listaSolicitacoes = new ArrayList<Solicitacao>();
 
     ///Tutorial
 
@@ -32,14 +32,15 @@ public class GerenciadorDeSolicitacao extends _Default{
     private GerenciadorDeSolicitacao() {
     }
 
-    public ArrayList<Solicitacao> getSolicitacoes(String login) {
+    public ArrayList<Solicitacao> getSolicitacoes(String ra_aluno) {
             DB db = new DB();
             ArrayList<Solicitacao> listaSolicitacao = new ArrayList<>();
             try{
-                ResultSet resultSet = db.select("SELECT * FROM solicitacao WHEN login = '"+login+"'");
+                ResultSet resultSet = db.select("SELECT * FROM solicitacao WHERE ra_aluno = '"+ra_aluno+"'");
                 if(resultSet != null){
                     while(resultSet.next()){
-                        Solicitacao obj = new Solicitacao(resultSet.getString("cod_solicitacao"),
+                        Log.d("myTag",  "Uma Solicitação encontrada");
+                        Solicitacao obj = new Solicitacao(resultSet.getString("codsolicitacao"),
                                 resultSet.getString("status"),
                                 resultSet.getString("ra_aluno"),
                                 resultSet.getString("data_atualizacao"),
@@ -48,6 +49,7 @@ public class GerenciadorDeSolicitacao extends _Default{
                                 resultSet.getString("codsecretario"),
                                 resultSet.getString("tipo"),
                                 resultSet.getString("texto"));
+                        Log.d("myTag",  "ra_aluno:"+resultSet.getString("ra_aluno"));
                         listaSolicitacao.add(obj);
                     }
                 }
@@ -56,7 +58,7 @@ public class GerenciadorDeSolicitacao extends _Default{
                 Log.d("myTag", this.menssagem + " - This is my message");
                 this.status = false;
             }
-        return listaSolicitacoes;
+        return listaSolicitacao;
     }
 
     public void novaSolicitacao(){
