@@ -12,7 +12,7 @@ package com.example.danielelvis.piefv6drawer;
 public class DB extends _Default implements Runnable {
 
     private Connection conn;
-    private String host = "187.94.190.147";
+    private String host = "179.125.232.14";
     private String db = "solicitafacamp";
     private int port = 3306;
     private String user = "root";

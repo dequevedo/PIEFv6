@@ -27,7 +27,8 @@ public class GerenciadorDeSolicitacao extends _Default{
     private ListView lvSolicitacao;
     private SolicitacaoListAdapter adapter;
     private List<Solicitacao> mSolicitacaoList;
-    private String login="";
+    private String login = "";
+    private String nome = "";
 
     private GerenciadorDeSolicitacao() {
     }
@@ -36,27 +37,29 @@ public class GerenciadorDeSolicitacao extends _Default{
             DB db = new DB();
             ArrayList<Solicitacao> listaSolicitacao = new ArrayList<>();
             try{
-                Log.d("myTag",  "Login-Base: "+this.login);
+                /*Log.d("myTag",  "Login-Base: "+this.login);
                 ResultSet resultSet = db.select("SELECT ra FROM aluno WHERE login = '"+this.login+"'");
                 ResultSet resultSet2 = null;
                 if(resultSet.next()){
                     Log.d("myTag",  "Ra-Base: "+resultSet.getString("ra"));
                     resultSet2 = db.select("SELECT * FROM solicitacao WHERE ra_aluno = '"
                             +resultSet.getString("ra")+"'");
-                }
-                    while(resultSet2.next()){
-                        Log.d("myTag",  "Login-Base: "+resultSet2.getString("ra_aluno"));
+                            }*/
+                ResultSet resultSet = db.select("SELECT * FROM solicitacao INNER JOIN aluno AS A ON A.ra = solicitacao.ra_aluno AND A.login = '"+login+"'");
+
+                    while(resultSet.next()){
+                        Log.d("myTag",  "Login-Base: "+resultSet.getString("ra_aluno"));
                         Log.d("myTag",  "Uma Solicitação encontrada");
-                        Solicitacao obj = new Solicitacao(resultSet2.getString("codsolicitacao"),
-                                resultSet2.getString("status"),
-                                resultSet2.getString("ra_aluno"),
-                                resultSet2.getString("data_atualizacao"),
-                                resultSet2.getString("data_criacao"),
-                                resultSet2.getString("codboleto"),
-                                resultSet2.getString("codsecretario"),
-                                resultSet2.getString("tipo"),
-                                resultSet2.getString("texto"));
-                        Log.d("myTag",  "ra_aluno:"+resultSet2.getString("ra_aluno"));
+                        Solicitacao obj = new Solicitacao(resultSet.getString("codsolicitacao"),
+                                resultSet.getString("status"),
+                                resultSet.getString("ra_aluno"),
+                                resultSet.getString("data_atualizacao"),
+                                resultSet.getString("data_criacao"),
+                                resultSet.getString("codboleto"),
+                                resultSet.getString("codsecretario"),
+                                resultSet.getString("tipo"),
+                                resultSet.getString("texto"));
+                        Log.d("myTag",  "ra_aluno:"+resultSet.getString("ra_aluno"));
                         listaSolicitacao.add(obj);
                     }
             }catch (Exception e) {
