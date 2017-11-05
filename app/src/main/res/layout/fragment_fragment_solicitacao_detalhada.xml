@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,9 +10,42 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/codigo_boleto"
+        android:text="Código do secretário:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView10"
+        android:text="Código do boleto:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView8"
+        android:text="RA do aluno:"
+        android:textSize="16dp" />
+
+    <TextView
         android:id="@+id/tv_tipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:text="Tipo de solicitação"
         android:textColor="#00a7f5"
         android:textSize="20dp" />
@@ -21,6 +54,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_tipo"
         android:text="Status da solicitação"
         android:textColor="#f92a3f"
         android:textSize="18dp" />
@@ -29,6 +65,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tv_dataCriacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
         android:text="Data da criação"
         android:textColor="#000"
         android:textSize="16dp" />
@@ -37,6 +77,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tv_dataAtualizacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
         android:text="Data de atualização"
         android:textColor="#000"
         android:textSize="16dp" />
@@ -45,6 +89,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ra_aluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_toEndOf="@+id/textView10"
+        android:layout_toRightOf="@+id/textView10"
         android:text="RA Aluno"
         android:textColor="#000"
         android:textSize="16dp" />
@@ -53,6 +100,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/protocolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/ra_aluno"
+        android:layout_toEndOf="@+id/textView8"
+        android:layout_toRightOf="@+id/textView8"
         android:text="Protocolo"
         android:textColor="#000"
         android:textSize="16dp" />
@@ -61,8 +111,63 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/codigo_boleto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView11"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_toEndOf="@+id/textView11"
+        android:layout_toRightOf="@+id/textView11"
         android:text="Codigo Boleto"
         android:textColor="#000"
         android:textSize="16dp" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/codigo_secretario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/codigo_boleto"
+        android:layout_toEndOf="@+id/textView12"
+        android:layout_toRightOf="@+id/textView12"
+        android:text="Codigo Secretário"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_status"
+        android:text="Criação:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView9"
+        android:text="Protocolo:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:text="Atualização:"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/mensagem"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView12"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+</RelativeLayout>

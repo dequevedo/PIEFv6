@@ -28,4 +28,7 @@
         <item>Conteúdo programático de disciplina - Transferência</item>
 
     </string-array>
+    <string name="title_activity_solicitacao_list_adapter_detalhado">
+        ActivitySolicitacaoListAdapterDetalhado
+    </string>
 </resources>
