@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -22,8 +24,7 @@
             <include
                 android:id="@+id/user_include_header"
                 layout="@layout/content_user_header"
-                layout_width="match_parent"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="83dp" />
 
             <Button
@@ -33,18 +34,34 @@
                 android:onClick="onNovaSolicitacaoButton"
                 android:text="Nova Solicitação" />
 
-            <include
-                android:id="@+id/solicitacoes_include_list"
-                layout="@layout/fragment_solicitacoes"
-                layout_width="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_height="310dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp" />
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/solicitacoes_include_list"
+                    layout="@layout/fragment_solicitacoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Visualizar  todas solicitações"
+                    app:layout_anchor="@+id/solicitacoes_include_list"
+                    app:layout_anchorGravity="bottom|center"
+                    tools:layout_editor_absoluteX="33dp" />
+
+            </android.support.design.widget.CoordinatorLayout>
+
 
         </LinearLayout>
+
     </ScrollView>
 
 </AbsoluteLayout>

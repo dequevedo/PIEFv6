@@ -1,0 +1,68 @@
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:background="#daf17f"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de solicitação"
+        android:textColor="#00a7f5"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status da solicitação"
+        android:textColor="#f92a3f"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tv_dataCriacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data da criação"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_dataAtualizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de atualização"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/ra_aluno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RA Aluno"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/protocolo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Protocolo"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/codigo_boleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Codigo Boleto"
+        android:textColor="#000"
+        android:textSize="16dp" />
+
+</LinearLayout>
