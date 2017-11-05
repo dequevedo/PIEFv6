@@ -29,6 +29,7 @@ public class GerenciadorDeSolicitacao extends _Default{
     private List<Solicitacao> mSolicitacaoList;
     private String login = "";
     private String nome = "";
+    private String RA = "";
 
     private GerenciadorDeSolicitacao() {
     }
@@ -62,6 +63,7 @@ public class GerenciadorDeSolicitacao extends _Default{
                         Log.d("myTag",  "ra_aluno:"+resultSet.getString("ra_aluno"));
                         listaSolicitacao.add(obj);
                     }
+                    this.RA = resultSet.getString("ra_aluno");
             }catch (Exception e) {
                 this.menssagem = e.getMessage();
                 Log.d("myTag", this.menssagem + " - This is my message");
@@ -77,11 +79,20 @@ public class GerenciadorDeSolicitacao extends _Default{
         //Enviar Mensagem de sucesso
     }
 
-    public void setLogin(String login){
+    public void setInfo(String login, String nome){
         this.login = login;
+        this.nome = nome;
     }
 
-   /* protected void FillSolicitacaoList(Activity a) {
+    public String getLogin() {
+        return login;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    /* protected void FillSolicitacaoList(Activity a) {
 
         final Activity activity = a;
 

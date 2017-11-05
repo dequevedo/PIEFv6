@@ -34,7 +34,7 @@ public class ActivityLogin extends AppCompatActivity {
                 alerta.setTitle("Logado com sucesso!");
                 alerta.setMessage("\n"+resultSet.getString("nome"));
                 alerta.show();
-                GerenciadorDeSolicitacao.getInstance().setLogin(resultSet.getString("login"));
+                GerenciadorDeSolicitacao.getInstance().setInfo(resultSet.getString("login"), resultSet.getString("nome"));
                 startActivity(new Intent(getApplicationContext(), ActivityMain.class));
             }
             else if(!resultSet.next()){
