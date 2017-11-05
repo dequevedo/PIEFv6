@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PIEFv6drawer.iml" filepath="$PROJECT_DIR$/PIEFv6drawer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PIEFv6.iml" filepath="$PROJECT_DIR$/PIEFv6.iml" />
+      <module fileurl="file://C:\Users\Asceifer\Documents\GitHub\PIEFv6\PIEFv6drawer.iml" filepath="C:\Users\Asceifer\Documents\GitHub\PIEFv6\PIEFv6drawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

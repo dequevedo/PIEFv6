@@ -27,7 +27,7 @@ public class FragmentMain extends Fragment {
 
         //We can get data from DB here
 
-        ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoes("201610703");
+        ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoes();
         Log.d("myTag", "retornou p/ main");
         for (Solicitacao solicitacao : mSolicitacaoList) {
             Log.d("myTag", String.valueOf(solicitacao.getRaAluno()));
