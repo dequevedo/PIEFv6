@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PIEFv6drawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tipos_de_solicitacoes">
+        <item>Declarações diversas</item>
+        <item>Reserva de equipamento</item>
+        <item>Transferência interna de curso de Graduação</item>
+        <item>Grade curricular de Curso de Graduação</item>
+        <item>Certificado de Conclusão de Curso</item>
+        <item>Solicitação de Diploma de Curso de Graduação</item>
+        <item>Carteirinha estudantil</item>
+        <item>Reserva de sala</item>
+        <item>Revisão de prova</item>
+        <item>Prova substitutiva</item>
+        <item>Atestado de matrícula</item>
+        <item>Conteúdo programático de disciplina</item>
+        <item>Histórico escolar</item>
+        <item>Atestado de matrícula</item>
+        <item>Histórico escolar</item>
+        <item>Conteúdo programático de disciplina</item>
+
+    </string-array>
+</resources>

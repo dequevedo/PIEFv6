@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_y="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+            <include
+                android:id="@+id/user_include_header"
+                layout="@layout/content_user_header"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="83dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onNovaSolicitacaoButton"
+                android:text="Nova Solicitação" />
+
+            <include
+                android:id="@+id/solicitacoes_include_list"
+                layout="@layout/fragment_solicitacoes"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="310dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</AbsoluteLayout>
