@@ -31,7 +31,7 @@ public class ActivityLogin extends AppCompatActivity {
                     + Login.getText() + "' AND senha = '" + Senha.getText() + "'");
             if(resultSet.next()) {
                 //inicializa os dados do aluno que logou
-                GerenciadorDeLogin.getInstance().DefinirDadosAluno(String.valueOf(Login));
+                GerenciadorDeLogin.getInstance().DefinirDadosAluno(String.valueOf(Login.getText()));
 
                 AlertDialog.Builder alerta = new AlertDialog.Builder(this);
                 alerta.setTitle("Logado com sucesso!");

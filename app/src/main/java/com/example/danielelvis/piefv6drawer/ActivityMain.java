@@ -118,10 +118,6 @@ public class ActivityMain extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
         } else if (id == R.id.nav_send) {
             startActivity(new Intent(getApplicationContext(), ActivityLogin.class));
         }

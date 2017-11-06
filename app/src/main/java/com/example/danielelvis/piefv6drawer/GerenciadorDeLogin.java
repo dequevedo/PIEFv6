@@ -31,10 +31,13 @@ public class GerenciadorDeLogin {
        } catch (Exception e){
            Log.d("myTag",  "Falha ao Buscar os atributos Senha e Nome");
        }
+
        try{
            ResultSet resultSet2 = db.select("SELECT * FROM aluno WHERE login = '"+login+"'");
+
            if (resultSet2.next()) {
                ra = resultSet2.getString("ra");
+               Log.d("batag",  "####RA:" + ra);
                turma = resultSet2.getString("turma");
                cpf = resultSet2.getString("cpf");
            }
@@ -42,7 +45,6 @@ public class GerenciadorDeLogin {
            Log.d("myTag",  "Falha ao Buscar os atributos RA, Turma e CPF");
        }
         aluno = new Aluno(login, senha, nome, ra, turma, cpf);
-        Log.d("myTag",  "nome: "+nome+" - login: "+login);
     }
 
     public Aluno getAluno() {
