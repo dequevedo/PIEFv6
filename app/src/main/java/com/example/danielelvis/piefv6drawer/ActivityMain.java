@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ActivityMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -52,8 +53,23 @@ public class ActivityMain extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+        FillNavigationBarUserHeader();
+
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void FillNavigationBarUserHeader(){
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View mHeaderView = navigationView.getHeaderView(0);
+
+        TextView nome2 = (TextView) mHeaderView.findViewById(R.id.nav_user_header_nome);
+        TextView ra2 = (TextView) mHeaderView.findViewById(R.id.nav_user_header_ra);
+        TextView curso2 = (TextView) mHeaderView.findViewById(R.id.nav_user_header_curso);
+
+        nome2.setText(GerenciadorDeLogin.getInstance().getAluno().getNome());
+        ra2.setText(GerenciadorDeLogin.getInstance().getAluno().getRa());
+        curso2.setText(GerenciadorDeLogin.getInstance().getAluno().getTurma());
     }
 
     @Override
@@ -122,7 +138,6 @@ public class ActivityMain extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), ActivityLogin.class));
         }
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -131,6 +146,15 @@ public class ActivityMain extends AppCompatActivity
     public void onNovaSolicitacaoButton(View view){
         //Set the fragment initially
         FragmentNovaSolicitacao fragment = new FragmentNovaSolicitacao();
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+    }
+
+    public void onTodasSolicitacoesButton(View view){
+        //Set the fragment initially
+        FragmentSolicitacoes fragment = new FragmentSolicitacoes();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);

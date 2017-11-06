@@ -52,6 +52,7 @@
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:onClick="onTodasSolicitacoesButton"
                     android:text="Visualizar  todas solicitações"
                     app:layout_anchor="@+id/solicitacoes_include_list"
                     app:layout_anchorGravity="bottom|center"
