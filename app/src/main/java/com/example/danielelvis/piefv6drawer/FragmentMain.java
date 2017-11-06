@@ -57,15 +57,15 @@ public class FragmentMain extends Fragment {
         TextView curso = (TextView) v.findViewById(R.id.userHeader_curso);
 
         //VALORES PROVISORIOS
-        nome.setText(GerenciadorDeSolicitacao.getInstance().getNome());
+        /*nome.setText(GerenciadorDeSolicitacao.getInstance().getNome());
         ra.setText("SAMPLE RA");
-        curso.setText("SAMPLE CURSO");
+        curso.setText("SAMPLE CURSO");*/
 
         //VALORES CORRETOS
-        /*
+
         nome.setText(GerenciadorDeLogin.getInstance().getAluno().getNome());
         ra.setText(GerenciadorDeLogin.getInstance().getAluno().getRa());
-        curso.setText(GerenciadorDeLogin.getInstance().getAluno().getTurma());*/
+        curso.setText(GerenciadorDeLogin.getInstance().getAluno().getTurma());
     }
 
 }

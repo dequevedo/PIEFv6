@@ -30,6 +30,9 @@ public class ActivityLogin extends AppCompatActivity {
             ResultSet resultSet = db.select("SELECT * FROM usuario WHERE login = '"
                     + Login.getText() + "' AND senha = '" + Senha.getText() + "'");
             if(resultSet.next()) {
+                //inicializa os dados do aluno que logou
+                GerenciadorDeLogin.getInstance().DefinirDadosAluno(String.valueOf(Login));
+
                 AlertDialog.Builder alerta = new AlertDialog.Builder(this);
                 alerta.setTitle("Logado com sucesso!");
                 alerta.setMessage("\n"+resultSet.getString("nome"));
