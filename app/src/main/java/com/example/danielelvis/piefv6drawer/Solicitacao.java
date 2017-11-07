@@ -3,12 +3,12 @@ package com.example.danielelvis.piefv6drawer;
 public class Solicitacao {
     private int protocolo;
     private String status;
-    private int raAluno;
+    private String raAluno;
     private String dataAtualizacao;
     private String dataCriacao;
-    private int codigoBoleto;
+    private String codigoBoleto;
     private String tipo;
-    private int codigoSecretario;
+    private String codigoSecretario;
     private String mensagem;
 
     public Solicitacao(String protocolo,
@@ -22,11 +22,11 @@ public class Solicitacao {
                        String mensagem) {
         this.protocolo = Integer.parseInt(protocolo);
         this.status = status;
-        this.raAluno = Integer.parseInt(raAluno);
+        this.raAluno = raAluno;
         this.dataAtualizacao = dataAtualizacao;
         this.dataCriacao = dataCriacao;
-        this.codigoBoleto = Integer.parseInt(codigoBoleto);
-        this.codigoSecretario = Integer.parseInt(codigoSecretario);
+        this.codigoBoleto = codigoBoleto;
+        this.codigoSecretario = codigoSecretario;
         this.tipo = tipo;
         this.mensagem = mensagem;
     }
@@ -63,11 +63,11 @@ public class Solicitacao {
         this.dataCriacao = dataCriacao;
     }
 
-    public int getCodigoBoleto() {
+    public String getCodigoBoleto() {
         return codigoBoleto;
     }
 
-    public void setCodigoBoleto(int codigoBoleto) {
+    public void setCodigoBoleto(String codigoBoleto) {
         this.codigoBoleto = codigoBoleto;
     }
 
@@ -79,19 +79,19 @@ public class Solicitacao {
         this.tipo = tipo;
     }
 
-    public int getRaAluno() {
+    public String getRaAluno() {
         return raAluno;
     }
 
-    public void setRaAluno(int raAluno) {
+    public void setRaAluno(String raAluno) {
         this.raAluno = raAluno;
     }
 
-    public int getCodigoSecretario() {
+    public String getCodigoSecretario() {
         return codigoSecretario;
     }
 
-    public void setCodigoSecretario(int codigoSecretario) {
+    public void setCodigoSecretario(String codigoSecretario) {
         this.codigoSecretario = codigoSecretario;
     }
 
