@@ -35,6 +35,22 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
             if(bundle.getString("protocolo") != null){
                 Toast.makeText(getApplicationContext(), "Protocolo =" + bundle.getString("protocolo"), Toast.LENGTH_SHORT).show();
 
+                Solicitacao sol = null;
+
+
+                for(Solicitacao x : GerenciadorDeSolicitacao.getInstance().getSolicitacoes()){
+                    int protocolo = 0;
+                    try {
+                        protocolo = Integer.parseInt(bundle.getString("protocolo"));
+                    } catch(NumberFormatException nfe) {
+                    }
+
+                    if(x.getProtocolo() == protocolo){
+                        sol = x;
+                    }
+                }
+
+                /*
                 //Pegar solicitação (apenas uma unica solicitação) com base no protocolo recebido acima no BD
                 Solicitacao sol = new Solicitacao(
                         "3",
@@ -46,7 +62,7 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
                         "98789546",
                         "Declarações diversas",
                         "mensagem lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhshamensagem " +
-                                "lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhsha");
+                                "lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhsha");*/
 
                 //Exibe os dados dessa solicitação na tela
                 TextView tvTipo = (TextView)findViewById(R.id.tv_tipo);

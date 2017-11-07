@@ -113,37 +113,7 @@ public class GerenciadorDeSolicitacao extends _Default{
         return nome;
     }
 
-    /* protected void FillSolicitacaoList(Activity a) {
-
-        final Activity activity = a;
-
-        lvSolicitacao = (ListView) activity.findViewById(R.id.listview_solicitacoes);
-
-        //Add sample data for list
-        //We can get data from DB here
-        mSolicitacaoList = new ArrayList<>();
-        mSolicitacaoList.add(new Solicitacao(7899, "Incompleta", new Date(2019,2,20),new Date(2019,2,20), 20520520, "Rematricula", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(4687, "Completa", new Date(2019,2,20),new Date(2019,2,20), 20520520, "Reserva de Sala", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(6789, "Em andamento", new Date(2019,2,20),new Date(2019,2,20), 20520520, "Revisão de prova", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(7814, "Incompleta", new Date(2019,2,20),new Date(2019,2,20), 20950520, "Rematricula", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(6818, "Em andamento", new Date(2019,2,20),new Date(2019,2,20), 20520520, "Reserva de Sala", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(8112, "Em andamento", new Date(2019,2,20),new Date(2019,2,20), 20150520, "Rematricula", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(9872, "Incompleta", new Date(2019,2,20),new Date(2019,2,20), 20520520, "Rematricula", 201612004, 10699));
-        mSolicitacaoList.add(new Solicitacao(1665, "Completa", new Date(2019,2,20),new Date(2019,2,20), 20579520, "Rematricula", 201612004, 10699));
-
-        //Init Adapter
-        adapter = new SolicitacaoListAdapter(activity.getApplicationContext(), mSolicitacaoList);
-        lvSolicitacao.setAdapter(adapter);
-
-
-        /*
-        lvSolicitacao.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Do something, ex: display msg
-                Toast.makeText(activity.getApplicationContext(), "Clicked product id =" + view.getTag(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }*/
+    public List<Solicitacao> getmSolicitacaoList() {
+        return mSolicitacaoList;
+    }
 }
