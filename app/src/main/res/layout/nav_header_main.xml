@@ -17,7 +17,7 @@
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="34dp"
-        android:src="@drawable/ic_menu_send"
+        android:src="@drawable/ic_person_black_24dp"
         app:border_color="#FF000000" />
 
     <RelativeLayout
@@ -32,25 +32,25 @@
         android:id="@+id/relativeLayout">
 
         <TextView
-            android:id="@+id/nav_user_header_curso"
+            android:id="@+id/String1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/String2"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/String2"
-            android:layout_toRightOf="@+id/String2"
-            android:text="Engenharia da Computação"
-            android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:layout_above="@+id/String2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Nome"
+            android:textAlignment="textEnd"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/nav_user_header_nome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/String2"
-            android:layout_toRightOf="@+id/String2"
+            android:layout_alignBaseline="@+id/String1"
+            android:layout_alignBottom="@+id/String1"
+            android:layout_alignLeft="@+id/nav_user_header_ra"
+            android:layout_alignStart="@+id/nav_user_header_ra"
             android:text="Daniel Elvis Quevedo"
             android:textAlignment="textStart"
             android:textSize="16sp" />
@@ -59,11 +59,35 @@
             android:id="@+id/nav_user_header_ra"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/nav_user_header_curso"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/String2"
-            android:layout_toRightOf="@+id/String2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/String1"
+            android:layout_toRightOf="@+id/String1"
             android:text="201612004"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/String2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/String3"
+            android:layout_alignEnd="@+id/String3"
+            android:layout_alignRight="@+id/String3"
+            android:text="RA"
+            android:textAlignment="textEnd"
+            android:layout_toStartOf="@id/nav_user_header_ra"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nav_user_header_curso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nav_user_header_ra"
+            android:layout_alignStart="@+id/nav_user_header_ra"
+            android:layout_below="@+id/String2"
+            android:text="Engenharia da Computação"
             android:textAlignment="textStart"
             android:textSize="16sp" />
 
@@ -71,37 +95,15 @@
             android:id="@+id/String3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/String2"
             android:text="Curso"
             android:textAlignment="textEnd"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/String2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/String3"
-            android:layout_alignRight="@+id/String3"
-            android:layout_below="@+id/String1"
-            android:text="RA"
-            android:textAlignment="textEnd"
-            android:textSize="16sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/String1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Nome"
-            android:textAlignment="textEnd"
-            android:textSize="16sp"
-            android:textStyle="bold" />
     </RelativeLayout>
 
 </RelativeLayout>

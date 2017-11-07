@@ -31,6 +31,7 @@ public class ActivityLogin extends AppCompatActivity {
             ResultSet resultSet = db.select("SELECT * FROM usuario WHERE login = '"
                     + Login.getText() + "' AND senha = MD5('" + Senha.getText() + "')");
             if(resultSet.next()) {
+                Log.d("loginerro", "Erro ao fazer login:");
                 //inicializa os dados do aluno que logou
                 GerenciadorDeLogin.getInstance().DefinirDadosAluno(String.valueOf(Login.getText()));
 
@@ -50,7 +51,7 @@ public class ActivityLogin extends AppCompatActivity {
             }
         }catch (Exception e){
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-            alerta.setMessage("Erro ao fazer login");
+            alerta.setMessage("Erro ao fazer login:");
             alerta.show();
         }
 

@@ -12,11 +12,11 @@ package com.example.danielelvis.piefv6drawer;
 public class DB extends _Default implements Runnable {
 
     private Connection conn;
-    private String host = "179.125.232.14";
+    private String host = "172.16.152.131";
     private String db = "solicitafacamp";
     private int port = 3306;
     private String user = "root";
-    private String pass = "123456";
+    private String pass = "1695";
     private String url = "jdbc:mysql://%s:%d/%s";
 
     public DB() {
