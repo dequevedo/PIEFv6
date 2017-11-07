@@ -35,39 +35,4 @@ public class FragmentNovaSolicitacao extends Fragment {
 
         return inflater.inflate(R.layout.fragment_nova_solicitacao, container, false);
     }
-
-    public void createSolicitacao(View view){
-        Log.d("myTag",  "create solicitacao");
-        String status="Solicitado",
-                raAluno = GerenciadorDeLogin.getInstance().getAluno().getLogin(),
-                dataAtualizacao = String.valueOf(new Date()),
-                dataCriacao = String.valueOf(new Date()),
-                codigoBoleto = "",
-                codigoSecretario = "",
-                tipo,
-                mensagem;
-        Log.d("myTag",  "Variaveis criadas");
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        Log.d("myTag",  "Spinner criado e setado");
-        tipo = spinner.getSelectedItem().toString();
-        Log.d("myTag",  "tipo pego do spinner");
-        EditText msg = (EditText) view.findViewById(R.id.editTextMsg);
-        Log.d("myTag",  "mensagem pega do edit");
-        mensagem = msg.getText().toString();
-        Log.d("myTag",  "mensagem setada");
-        Log.d("myTag",  "Variaveis SETADAS");
-        DB db = new DB();
-        try {
-            db.execute("INSERT INTO solicitacao " +
-                    "(`status`, `ra_aluno`, `data_atualizacao`, `tipo`, `texto`, `data_criacao`) " +
-                    "VALUES ('" + status + "', " +
-                    "'" + raAluno + "', " +
-                    "'" + dataAtualizacao + "', " +
-                    "'" + tipo + "', " +
-                    "'" + mensagem + "', " +
-                    "'" + dataCriacao + "')");
-        }catch (Exception e){
-            Log.d("myTag",  e.getMessage()+" - Problema ao Criar Solicitação");
-        }
-    }
 }

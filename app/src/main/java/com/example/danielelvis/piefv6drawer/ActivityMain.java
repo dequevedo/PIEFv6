@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,7 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.Date;
 
 public class ActivityMain extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,6 +92,45 @@ public class ActivityMain extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    public void createSolicitacao(View view){
+        Log.d("myTag",  "create solicitacao");
+        String status="Solicitado",
+                raAluno = GerenciadorDeLogin.getInstance().getAluno().getRa(),
+                dataAtualizacao = String.valueOf(new Date()),
+                dataCriacao = String.valueOf(new Date()),
+                codigoBoleto = "",
+                codigoSecretario = "",
+                tipo,
+                mensagem;
+        Log.d("myTag",  "Variaveis criadas");
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Log.d("myTag",  "Spinner criado e setado");
+        tipo = spinner.getSelectedItem().toString();
+        Log.d("myTag",  "tipo pego do spinner");
+        EditText msg = (EditText) findViewById(R.id.editTextMsg);
+        Log.d("myTag",  "mensagem pega do edit");
+        mensagem = msg.getText().toString();
+        Log.d("myTag",  "mensagem setada");
+        Log.d("myTag",  "Variaveis SETADAS");
+        DB db = new DB();
+        try {
+            db.execute("INSERT INTO solicitacao " +
+                    "(`status`, `ra_aluno`, `data_atualizacao`, `tipo`, `observacao`, `data_criacao`) " +
+                    "VALUES ('" + status + "', " +
+                    "'" + raAluno + "', " +
+                    "'" + dataAtualizacao + "', " +
+                    "'" + tipo + "', " +
+                    "'" + mensagem + "', " +
+                    "'" + dataCriacao + "')");
+
+            Log.d("newSolicitacao",  " Solicitação criada");
+            Snackbar.make(view, "Solicitação criada", Snackbar.LENGTH_LONG).show();
+        }catch (Exception e){
+            Log.d("newSolicitacao",  e.getMessage()+" - Problema ao Criar Solicitação");
+            Snackbar.make(view, "Problema ao Criar Solicitação", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override

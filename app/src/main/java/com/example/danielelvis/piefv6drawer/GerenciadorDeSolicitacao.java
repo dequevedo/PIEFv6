@@ -80,7 +80,7 @@ public class GerenciadorDeSolicitacao extends _Default{
                                 codBoleto,
                                 loginSecretario,
                                 resultSet.getString("tipo"),
-                                resultSet.getString("texto"));
+                                resultSet.getString("observacao"));
                         Log.d("myTag",  "ra_aluno:"+resultSet.getString("ra_aluno"));
                         listaSolicitacao.add(obj);
                     }
