@@ -20,6 +20,7 @@ public class GerenciadorDeLogin {
         String ra = "";
         String turma = "";
         String cpf = "";
+        String email = "";
 
         DB db = new DB();
        try {
@@ -27,6 +28,7 @@ public class GerenciadorDeLogin {
            if (resultSet.next()) {
                senha = resultSet.getString("senha");
                nome = resultSet.getString("nome");
+               email = resultSet.getString("email");
            }
        } catch (Exception e){
            Log.d("myTag",  "Falha ao Buscar os atributos Senha e Nome");
@@ -44,7 +46,7 @@ public class GerenciadorDeLogin {
        }catch (Exception e){
            Log.d("myTag",  "Falha ao Buscar os atributos RA, Turma e CPF");
        }
-        aluno = new Aluno(login, senha, nome, ra, turma, cpf);
+        aluno = new Aluno(login, senha, nome, ra, turma, cpf, email);
     }
 
     public Aluno getAluno() {

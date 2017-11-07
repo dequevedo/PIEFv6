@@ -28,7 +28,7 @@ public class ActivityLogin extends AppCompatActivity {
 
         try{
             ResultSet resultSet = db.select("SELECT * FROM usuario WHERE login = '"
-                    + Login.getText() + "' AND senha = '" + Senha.getText() + "'");
+                    + Login.getText() + "' AND senha = MD5('" + Senha.getText() + "')");
             if(resultSet.next()) {
                 //inicializa os dados do aluno que logou
                 GerenciadorDeLogin.getInstance().DefinirDadosAluno(String.valueOf(Login.getText()));

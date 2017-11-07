@@ -44,7 +44,7 @@
         android:text="Seu E-Mail:" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -61,12 +61,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText"
+        android:layout_below="@+id/editTextEmail"
         android:layout_marginTop="13dp"
         android:text="Observações:" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editTextMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button2"
@@ -86,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Enviar" />
+        android:text="Enviar"
+        android:onClick="createSolicitacao"/>
 
 </RelativeLayout>

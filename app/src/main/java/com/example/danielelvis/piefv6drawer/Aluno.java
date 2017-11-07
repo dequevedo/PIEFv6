@@ -7,14 +7,16 @@ public class Aluno {
     private String ra;
     private String turma;
     private String cpf;
+    private String email;
 
-    public Aluno(String login, String senha, String nome, String ra, String turma, String cpf) {
+    public Aluno(String login, String senha, String nome, String ra, String turma, String cpf, String email) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
         this.ra = ra;
         this.turma = turma;
         this.cpf = cpf;
+        this.email = email;
     }
 
     public String getLogin() {
@@ -63,5 +65,13 @@ public class Aluno {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -70,7 +70,7 @@ public class GerenciadorDeSolicitacao extends _Default{
                                 loginSecretario+
                                 resultSet.getString("tipo")+
                                 resultSet.getString("texto"));*/
-                        
+
                         //salva os atributos da solicitação encontrada em um obj
                         Solicitacao obj = new Solicitacao(resultSet.getString("protocolo"),
                                 resultSet.getString("status"),
