@@ -87,6 +87,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Enviar"
-        android:onClick="createSolicitacao"/>
+        android:onClick="createSolicitacao"
+        android:background="#307aaf"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>

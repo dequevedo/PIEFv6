@@ -32,7 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onNovaSolicitacaoButton"
-                android:text="Nova Solicitação" />
+                android:text="Nova Solicitação"
+                android:background="#234864"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
             <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
@@ -56,7 +60,11 @@
                     android:text="Visualizar  todas solicitações"
                     app:layout_anchor="@+id/solicitacoes_include_list"
                     app:layout_anchorGravity="bottom|center"
-                    tools:layout_editor_absoluteX="33dp" />
+                    tools:layout_editor_absoluteX="33dp"
+                    android:background="#234864"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
 
             </android.support.design.widget.CoordinatorLayout>
 
