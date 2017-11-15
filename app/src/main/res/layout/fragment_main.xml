@@ -27,20 +27,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="83dp" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="onNovaSolicitacaoButton"
-                android:text="Nova Solicitação"
-                android:background="#234864"
-                android:textColor="@android:color/white"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-
             <android.support.design.widget.CoordinatorLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#234864"
+                    android:onClick="onNovaSolicitacaoButton"
+                    android:text="Nova Solicitação"
+                    android:textColor="@android:color/white"
+                    app:layout_anchor="@+id/solicitacoes_include_list"
+                    app:layout_anchorGravity="top|center" />
 
                 <include
                     android:id="@+id/solicitacoes_include_list"
@@ -52,21 +55,21 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp" />
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="onTodasSolicitacoesButton"
-                    android:text="Visualizar  todas solicitações"
-                    app:layout_anchor="@+id/solicitacoes_include_list"
-                    app:layout_anchorGravity="bottom|center"
-                    tools:layout_editor_absoluteX="33dp"
-                    android:background="#234864"
-                    android:textColor="@android:color/white"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"/>
-
             </android.support.design.widget.CoordinatorLayout>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#234864"
+                android:onClick="onTodasSolicitacoesButton"
+                android:text="Visualizar  todas solicitações"
+                android:textColor="@android:color/white"
+                app:layout_anchor="@+id/solicitacoes_include_list"
+                app:layout_anchorGravity="bottom|center"
+                tools:layout_editor_absoluteX="33dp" />
 
 
         </LinearLayout>

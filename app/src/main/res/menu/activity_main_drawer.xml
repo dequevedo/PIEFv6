@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_main"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
+            android:title="Página Inicial" />
         <item
             android:id="@+id/nav_nova_solicitacao"
             android:icon="@drawable/ic_menu_gallery"
@@ -19,11 +19,7 @@
         <item
             android:id="@+id/nav_send"
             android:icon="@drawable/ic_menu_send"
-            android:title="Fazer Logoff" />
+            android:title="Sair" />
     </group>
-
-    <item>
-        <menu></menu>
-    </item>
 
 </menu>

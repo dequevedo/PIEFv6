@@ -14,11 +14,9 @@
         android:layout_alignLeft="@+id/relativeLayout"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/relativeLayout"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/ic_person_black_24dp"
-        app:border_color="#FF000000" />
+        app:border_color="#ffffff" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,7 +39,8 @@
             android:text="Nome"
             android:textAlignment="textEnd"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/nav_user_header_nome"
@@ -53,7 +52,8 @@
             android:layout_alignStart="@+id/nav_user_header_ra"
             android:text="Daniel Elvis Quevedo"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/nav_user_header_ra"
@@ -65,7 +65,8 @@
             android:layout_toEndOf="@+id/String1"
             android:layout_toRightOf="@+id/String1"
             android:text="201612004"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/String2"
@@ -78,7 +79,8 @@
             android:textAlignment="textEnd"
             android:layout_toStartOf="@id/nav_user_header_ra"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/nav_user_header_curso"
@@ -89,7 +91,8 @@
             android:layout_below="@+id/String2"
             android:text="Engenharia da Computação"
             android:textAlignment="textStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
 
         <TextView
             android:id="@+id/String3"
@@ -101,7 +104,8 @@
             android:text="Curso"
             android:textAlignment="textEnd"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"/>
 
 
     </RelativeLayout>

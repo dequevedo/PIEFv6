@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tipo de solicitação"
-        android:textColor="#00a7f5"
+        android:textColor="#00c8ff"
         android:textSize="20dp" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status da solicitação"
-        android:textColor="#f92a3f"
+        android:textColor="#00c8ff"
         android:textSize="18dp" />
 
     <TextView
