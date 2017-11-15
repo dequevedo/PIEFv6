@@ -22,22 +22,22 @@
         android:layout_alignBottom="@+id/textBoleto"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:text="Gerar Boleto"
-        android:onClick="openBoleto"/>
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:onClick="openBoleto"
+        android:text="Gerar Boleto" />
 
     <TextView
         android:id="@+id/textBoleto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@+id/bGerarBoleto"
-        android:layout_toStartOf="@+id/bGerarBoleto"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
         android:text="Não é necessário pagamento"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimaryText"
         android:textStyle="bold" />
 
 </android.widget.RelativeLayout>

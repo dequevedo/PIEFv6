@@ -1,18 +1,23 @@
 package com.example.danielelvis.piefv6drawer;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
-
+    private Solicitacao sol;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +40,7 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
             if(bundle.getString("protocolo") != null){
                 Toast.makeText(getApplicationContext(), "Protocolo =" + bundle.getString("protocolo"), Toast.LENGTH_SHORT).show();
 
-                Solicitacao sol = null;
+                sol = null;
 
 
                 for(Solicitacao x : GerenciadorDeSolicitacao.getInstance().getSolicitacoes()){
@@ -65,6 +70,7 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
                                 "lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhshamensagem lokasjhaskjhaskjhsha");*/
 
                 //Exibe os dados dessa solicitação na tela
+
                 TextView tvTipo = (TextView)findViewById(R.id.tv_tipo);
                 TextView tvStatus = (TextView)findViewById(R.id.tv_status);
                 TextView tvDataCriacao = (TextView)findViewById(R.id.tv_dataCriacao);
@@ -84,8 +90,43 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
                 raAluno.setText(String.valueOf(sol.getRaAluno()));
                 codSecretario.setText(String.valueOf(sol.getCodigoSecretario()));
                 message.setText(String.valueOf(sol.getMensagem()));
+
+                //verifica se existe boleto para a solicitação e libera ou não o botão Gerar Boleto
+                TextView text =  findViewById(R.id.textBoleto);
+                if(!sol.getStatus().equals("FINALIZADO")) {
+                    if (sol.getCodigoBoleto().equals("0")) {
+                        Log.d("myTag", "NÃO É NECESSÁRIO PAGAMENTO");
+                        findViewById(R.id.bGerarBoleto).setVisibility(View.INVISIBLE);
+                        text.setText("NÃO É NECESSÁRIO PAGAMENTO");
+                    } else {
+                        Log.d("myTag", "NECESSARIO PAGAMENTO");
+                        findViewById(R.id.bGerarBoleto).setVisibility(View.VISIBLE);
+                        text.setText("PAGAMENTO NECESSÁRIO: R$" + sol.getCodigoBoleto() + ",00");
+                    }
+                }
+                else {
+                    text.setText("SOLICITAÇÃO FINALIZADA");
+                    findViewById(R.id.bGerarBoleto).setVisibility(View.INVISIBLE);
+                }
+                //pega o nome do funcionario
+                /*DB db = new DB();
+                ResultSet resultSet = db.select("SELECT nome FROM usuario WHERE login='"+String.valueOf(sol.getCodigoSecretario()));
+                try {
+                    if(resultSet.next())
+                    codSecretario.setText(resultSet.getString("nome").toString());
+                } catch (SQLException e) {
+                }*/
             }
         }
+    }
+
+    public void openBoleto(View view){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://"+new DB().getHost()+":8090" +
+                "/boletophp/boleto_santander_banespa.php" +
+                "?1="+GerenciadorDeLogin.getInstance().getAluno().getNome()+"" +
+                "&2="+sol.getTipo()+"" +
+                "&3="+sol.getCodigoBoleto()));
+        startActivity(intent);
     }
 
 }
