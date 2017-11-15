@@ -92,4 +92,8 @@ public class DB extends _Default implements Runnable {
         }
         return resultSet;
     }
+
+    public String getHost(){
+        return host;
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,5 +11,33 @@
     <include
         layout="@layout/fragment_fragment_solicitacao_detalhada"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/include" />
+
+    <Button
+        android:id="@+id/bGerarBoleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textBoleto"
+        android:layout_alignBottom="@+id/textBoleto"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:text="Gerar Boleto"
+        android:onClick="openBoleto"/>
+
+    <TextView
+        android:id="@+id/textBoleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/bGerarBoleto"
+        android:layout_toStartOf="@+id/bGerarBoleto"
+        android:text="Não é necessário pagamento"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold" />
+
+</android.widget.RelativeLayout>
