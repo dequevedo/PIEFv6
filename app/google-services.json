@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "495424044842",
-    "firebase_url": "https://piefteste.firebaseio.com",
-    "project_id": "piefteste",
-    "storage_bucket": "piefteste.appspot.com"
+    "project_number": "365487917127",
+    "firebase_url": "https://sistemasolicitacoesfacamp.firebaseio.com",
+    "project_id": "sistemasolicitacoesfacamp",
+    "storage_bucket": "sistemasolicitacoesfacamp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:495424044842:android:116be5840f2961e1",
+        "mobilesdk_app_id": "1:365487917127:android:921e3e9997e2a79d",
         "android_client_info": {
-          "package_name": "com.example.danielelvis.notification"
+          "package_name": "com.example.danielelvis.piefv6drawer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "495424044842-l6q1qrvtbt669mcmglp8b5stjb7nn8cl.apps.googleusercontent.com",
+          "client_id": "365487917127-rb1qfhvlh3auq6d1pbti89a2v23ve62o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBXw3wLptMMj54fI8sh8PhGgn_YuOMqXME"
+          "current_key": "AIzaSyCIMLao0tZRug35owvdbVMMRXHFGxMXo5k"
         }
       ],
       "services": {

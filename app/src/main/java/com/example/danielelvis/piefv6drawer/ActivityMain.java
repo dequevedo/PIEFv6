@@ -1,9 +1,20 @@
 package com.example.danielelvis.piefv6drawer;
 
+import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -131,7 +142,32 @@ public class ActivityMain extends AppCompatActivity
             Log.d("newSolicitacao",  e.getMessage()+" - Problema ao Criar Solicitação");
             Snackbar.make(view, "Problema ao Criar Solicitação", Snackbar.LENGTH_LONG).show();
         }
+        EnviarNotificação();
     }
+
+
+
+    public void EnviarNotificação(){
+        Intent intent = new Intent();
+        PendingIntent pIntent = PendingIntent.getActivity(this,0, intent, 0);
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        String tipo = spinner.getSelectedItem().toString();
+
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.ic_facamp_logo)
+                .setContentTitle(tipo)
+                .setContentText("Status atualizado para: EM ANÁLISE")
+                .setAutoCancel(true)
+                .setSound(defaultSoundUri)
+                .setContentIntent(pIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0, notificationBuilder.build());
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

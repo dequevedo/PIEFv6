@@ -43,7 +43,7 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
                 sol = null;
 
 
-                for(Solicitacao x : GerenciadorDeSolicitacao.getInstance().getSolicitacoes()){
+                for(Solicitacao x : GerenciadorDeSolicitacao.getInstance().getSolicitacoesFromDB()){
                     int protocolo = 0;
                     try {
                         protocolo = Integer.parseInt(bundle.getString("protocolo"));
