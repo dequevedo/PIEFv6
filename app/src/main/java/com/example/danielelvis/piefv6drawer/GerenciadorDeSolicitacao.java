@@ -37,14 +37,6 @@ public class GerenciadorDeSolicitacao extends _Default{
             DB db = new DB();
             ArrayList<Solicitacao> listaSolicitacao = new ArrayList<>();
             try{
-                /*Log.d("myTag",  "Login-Base: "+this.login);
-                ResultSet resultSet = db.select("SELECT ra FROM aluno WHERE login = '"+this.login+"'");
-                ResultSet resultSet2 = null;
-                if(resultSet.next()){
-                    Log.d("myTag",  "Ra-Base: "+resultSet.getString("ra"));
-                    resultSet2 = db.select("SELECT * FROM solicitacao WHERE ra_aluno = '"
-                            +resultSet.getString("ra")+"'");
-                            }*/
                 ResultSet resultSet = db.select("SELECT * FROM solicitacao INNER JOIN " +
                         "aluno AS A ON A.ra = solicitacao.ra_aluno AND A.login = '"+login+"'");
 
@@ -60,16 +52,6 @@ public class GerenciadorDeSolicitacao extends _Default{
                             codBoleto=resultSet.getString("codboleto");
                         if(resultSet.getString("loginsecretario") != null)
                             loginSecretario=resultSet.getString("loginsecretario");
-
-                        /*Log.d("myTag",  ""+resultSet.getString("protocolo")+
-                                resultSet.getString("status")+
-                                resultSet.getString("ra_aluno")+
-                                resultSet.getString("data_atualizacao")+
-                                resultSet.getString("data_criacao")+
-                                codBoleto+
-                                loginSecretario+
-                                resultSet.getString("tipo")+
-                                resultSet.getString("texto"));*/
 
                         //salva os atributos da solicitação encontrada em um obj
                         Solicitacao obj = new Solicitacao(resultSet.getString("protocolo"),

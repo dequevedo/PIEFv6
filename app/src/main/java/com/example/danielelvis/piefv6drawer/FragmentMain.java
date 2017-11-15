@@ -25,7 +25,7 @@ public class FragmentMain extends Fragment {
         ListView lvSolicitacao = (ListView) view.findViewById(R.id.listview_solicitacoes);
 
         //We can get data from DB here
-        ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoes();
+        ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoesFromDB();
         Log.d("myTag", "retornou p/ main");
         for (Solicitacao solicitacao : mSolicitacaoList) {
             Log.d("myTag", String.valueOf(solicitacao.getRaAluno()));
