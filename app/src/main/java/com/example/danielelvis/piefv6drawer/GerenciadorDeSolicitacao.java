@@ -33,7 +33,7 @@ public class GerenciadorDeSolicitacao extends _Default{
     private GerenciadorDeSolicitacao() {
     }
 
-    public ArrayList<Solicitacao> getSolicitacoes() {
+    public ArrayList<Solicitacao> getSolicitacoesFromDB() {
             DB db = new DB();
             ArrayList<Solicitacao> listaSolicitacao = new ArrayList<>();
             try{
