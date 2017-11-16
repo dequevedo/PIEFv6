@@ -18,12 +18,8 @@
         android:id="@+id/bGerarBoleto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textBoleto"
-        android:layout_alignBottom="@+id/textBoleto"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_below="@+id/textBoleto"
+        android:layout_centerHorizontal="true"
         android:onClick="openBoleto"
         android:text="Gerar Boleto" />
 
@@ -31,11 +27,8 @@
         android:id="@+id/textBoleto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
+        android:layout_below="@+id/include"
+        android:layout_centerHorizontal="true"
         android:text="Não é necessário pagamento"
         android:textColor="@color/colorPrimaryText"
         android:textStyle="bold" />
