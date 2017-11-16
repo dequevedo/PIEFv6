@@ -59,11 +59,12 @@ public class GerenciadorDeNotificacao extends Thread {
                     if(!item1.getStatus().equals(item2.getStatus())){
                         mSolicitacaoList = gerenciador.getSolicitacaoList();
                         EnviarNotificação(item1.getTipo(), item1.getStatus());
-                        break;
                     }
                 }
             }
         }
+
+        if(dbSolicitacaoList.size() != mSolicitacaoList.size()) mSolicitacaoList = gerenciador.getSolicitacaoList();
 
         /*
         int size1 = dbSolicitacaoList.size();
