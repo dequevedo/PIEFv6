@@ -29,8 +29,15 @@ public class ActivitySolicitacaoListAdapterDetalhado extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Criar nova solicitação", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                //Set the fragment initially
+                FragmentNovaSolicitacao fragment = new FragmentNovaSolicitacao();
+                android.support.v4.app.FragmentTransaction fragmentTransaction =
+                        getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragment);
+                fragmentTransaction.commit();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

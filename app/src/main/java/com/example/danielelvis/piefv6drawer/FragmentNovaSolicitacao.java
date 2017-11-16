@@ -1,6 +1,5 @@
 package com.example.danielelvis.piefv6drawer;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,10 +11,6 @@ import android.widget.Spinner;
 
 import java.util.Date;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class FragmentNovaSolicitacao extends Fragment {
 
 
