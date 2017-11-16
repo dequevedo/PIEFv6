@@ -46,15 +46,40 @@ public class GerenciadorDeNotificacao extends Thread {
 
     private void CheckSolicitacoesListDifferences(){
         dbSolicitacaoList = gerenciador.getSolicitacoesFromDB();
-        mSolicitacaoList = gerenciador.getSolicitacaoList();
+        if(mSolicitacaoList == null) mSolicitacaoList = gerenciador.getSolicitacaoList();
+
+        for (Solicitacao item1 : dbSolicitacaoList) {
+            for (Solicitacao item2 : mSolicitacaoList) {
+                if(item1.getProtocolo() == item2.getProtocolo()){
+                    Log.d("qwe" , "-------------------------------------------------------------------");
+                    Log.d("qwe" , "Protocolo: " + item1.getProtocolo());
+                    Log.d("qwe" , "Status: " + item1.getStatus());
+                    Log.d("qwe" , "Status: " + item2.getStatus());
+
+                    if(!item1.getStatus().equals(item2.getStatus())){
+                        mSolicitacaoList = gerenciador.getSolicitacaoList();
+                        EnviarNotificação(item1.getTipo(), item1.getStatus());
+                        break;
+                    }
+                }
+            }
+        }
+
+        /*
+        int size1 = dbSolicitacaoList.size();
+        int size2 = mSolicitacaoList.size();
+        int size = 0;
+
+        if(size1 < size2){
+            size = size1;
+        } else {
+            size = size2;
+        }
+
 
         if( mSolicitacaoList != null && dbSolicitacaoList != null){
-            Log.d("size" , "Size:" + mSolicitacaoList.size());
-            for(int i = 0; i < mSolicitacaoList.size(); i++){
-
                 String status1 = dbSolicitacaoList.get(i).getStatus();
                 String status2 = mSolicitacaoList.get(i).getStatus();
-
 
                 Log.d("comparar" , "----------------------------------------------------------");
                 Log.d("comparar" , "ID: " +  i);
@@ -71,7 +96,7 @@ public class GerenciadorDeNotificacao extends Thread {
                     Log.d("banco1", "Atualizou de: " + mSolicitacaoList.get(i).getStatus() + " Para: "+ dbSolicitacaoList.get(i).getStatus());
                 }
             }
-        }
+        }*/
     }
 
     public void EnviarNotificação(String titulo, String statusDepois){

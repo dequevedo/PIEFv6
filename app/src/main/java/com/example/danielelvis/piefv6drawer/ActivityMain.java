@@ -147,32 +147,7 @@ public class ActivityMain extends AppCompatActivity
             Log.d("newSolicitacao",  e.getMessage()+" - Problema ao Criar Solicitação");
             Snackbar.make(view, "Problema ao Criar Solicitação", Snackbar.LENGTH_LONG).show();
         }
-        EnviarNotificação();
     }
-
-
-
-    public void EnviarNotificação(){
-        Intent intent = new Intent();
-        PendingIntent pIntent = PendingIntent.getActivity(this,0, intent, 0);
-
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        String tipo = spinner.getSelectedItem().toString();
-
-
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_facamp_logo)
-                .setContentTitle(tipo)
-                .setContentText("Status atualizado para: EM ANÁLISE")
-                .setAutoCancel(true)
-                .setSound(defaultSoundUri)
-                .setContentIntent(pIntent);
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0, notificationBuilder.build());
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
