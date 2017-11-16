@@ -29,6 +29,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ActivityMain extends AppCompatActivity
@@ -112,10 +113,13 @@ public class ActivityMain extends AppCompatActivity
 
     public void createSolicitacao(View view){
         Log.d("myTag",  "create solicitacao");
+
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+
         String status="SOLICITADO",
                 raAluno = GerenciadorDeLogin.getInstance().getAluno().getRa(),
-                dataAtualizacao = String.valueOf(new Date()),
-                dataCriacao = String.valueOf(new Date()),
+                dataAtualizacao = String.valueOf(formatador.format(new Date())),
+                dataCriacao = String.valueOf(formatador.format(new Date())),
                 codigoBoleto = "",
                 codigoSecretario = "",
                 tipo,
