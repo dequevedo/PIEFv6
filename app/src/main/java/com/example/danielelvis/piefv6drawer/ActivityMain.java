@@ -112,7 +112,7 @@ public class ActivityMain extends AppCompatActivity
 
     public void createSolicitacao(View view){
         Log.d("myTag",  "create solicitacao");
-        String status="Solicitado",
+        String status="SOLICITADO",
                 raAluno = GerenciadorDeLogin.getInstance().getAluno().getRa(),
                 dataAtualizacao = String.valueOf(new Date()),
                 dataCriacao = String.valueOf(new Date()),
