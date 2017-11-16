@@ -73,6 +73,11 @@ public class ActivityMain extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        GerenciadorDeNotificacao GdN = new GerenciadorDeNotificacao();
+        GdN.start();
+        GdN.c = this;
     }
 
     public void FillNavigationBarUserHeader(){
