@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/relativeLayout"
         android:layout_marginTop="36dp"
-        android:src="@drawable/ic_person_black_24dp"
+        android:src="@drawable/ic_facamp_logo"
         app:border_color="#ffffff" />
 
     <RelativeLayout
