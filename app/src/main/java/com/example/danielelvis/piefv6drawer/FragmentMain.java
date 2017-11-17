@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class FragmentMain extends Fragment {
@@ -26,6 +27,8 @@ public class FragmentMain extends Fragment {
 
         //We can get data from DB here
         ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoesFromDB();
+        Collections.reverse(mSolicitacaoList);
+
         Log.d("myTag", "retornou p/ main");
         for (Solicitacao solicitacao : mSolicitacaoList) {
             Log.d("myTag", String.valueOf(solicitacao.getRaAluno()));

@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class FragmentSolicitacoes extends Fragment {
@@ -28,6 +29,7 @@ public class FragmentSolicitacoes extends Fragment {
 
         //We can get data from DB here
         ArrayList<Solicitacao> mSolicitacaoList = GerenciadorDeSolicitacao.getInstance().getSolicitacoesFromDB();
+        Collections.reverse(mSolicitacaoList);
 
         //Init Adapter
         SolicitacaoListAdapter adapter = new SolicitacaoListAdapter(view.getContext(), mSolicitacaoList);

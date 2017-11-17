@@ -7,73 +7,65 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_y="0dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="50dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="50dp" />
+        <include
+            android:id="@+id/user_include_header"
+            layout="@layout/content_user_header"
+            android:layout_width="match_parent"
+            android:layout_height="83dp" />
 
-            <include
-                android:id="@+id/user_include_header"
-                layout="@layout/content_user_header"
-                android:layout_width="match_parent"
-                android:layout_height="83dp" />
-
-            <android.support.design.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="#234864"
-                    android:onClick="onNovaSolicitacaoButton"
-                    android:text="Nova Solicitação"
-                    android:textColor="@android:color/white"
-                    app:layout_anchor="@+id/solicitacoes_include_list"
-                    app:layout_anchorGravity="top|center" />
-
-                <include
-                    android:id="@+id/solicitacoes_include_list"
-                    layout="@layout/fragment_solicitacoes"
-                    android:layout_width="match_parent"
-                    android:layout_height="260dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp" />
-
-            </android.support.design.widget.CoordinatorLayout>
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="#234864"
-                android:onClick="onTodasSolicitacoesButton"
-                android:text="Visualizar  todas solicitações"
+                android:onClick="onNovaSolicitacaoButton"
+                android:text="Nova Solicitação"
                 android:textColor="@android:color/white"
                 app:layout_anchor="@+id/solicitacoes_include_list"
-                app:layout_anchorGravity="bottom|center"
-                tools:layout_editor_absoluteX="33dp" />
+                app:layout_anchorGravity="top|center" />
+
+            <include
+                android:id="@+id/solicitacoes_include_list"
+                layout="@layout/fragment_solicitacoes"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#234864"
+            android:onClick="onTodasSolicitacoesButton"
+            android:text="Visualizar  todas solicitações"
+            android:textColor="@android:color/white"
+            app:layout_anchor="@+id/solicitacoes_include_list"
+            app:layout_anchorGravity="bottom|center"
+            tools:layout_editor_absoluteX="33dp" />
 
 
-        </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </AbsoluteLayout>

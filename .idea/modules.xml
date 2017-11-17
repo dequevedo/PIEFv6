@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PIEFa.iml" filepath="$PROJECT_DIR$/.idea/PIEFa.iml" />
+      <module fileurl="file://C:\Users\Miguel Quevedo\Desktop\PIEFv18\.idea\PIEFa.iml" filepath="C:\Users\Miguel Quevedo\Desktop\PIEFv18\.idea\PIEFa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PIEFv18.iml" filepath="$PROJECT_DIR$/.idea/PIEFv18.iml" />
       <module fileurl="file://C:\Users\DanielElvis\Desktop\PIEFa\.idea\PIEFv6.iml" filepath="C:\Users\DanielElvis\Desktop\PIEFa\.idea\PIEFv6.iml" />
       <module fileurl="file://C:\Users\Miguel Quevedo\Desktop\PIEFv6\PIEFv6 - Copia.iml" filepath="C:\Users\Miguel Quevedo\Desktop\PIEFv6\PIEFv6 - Copia.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Miguel Quevedo\Desktop\PIEFv18\app\app.iml" filepath="C:\Users\Miguel Quevedo\Desktop\PIEFv18\app\app.iml" />
     </modules>
   </component>
 </project>
