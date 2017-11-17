@@ -154,6 +154,14 @@ public class ActivityMain extends AppCompatActivity
 
             Log.d("newSolicitacao",  " Solicitação criada");
             Snackbar.make(view, "Solicitação criada", Snackbar.LENGTH_LONG).show();
+
+            //MUDAR FRAGMENT
+            FragmentMain fragment = new FragmentMain();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+
         }catch (Exception e){
             Log.d("newSolicitacao",  e.getMessage()+" - Problema ao Criar Solicitação");
             Snackbar.make(view, "Problema ao Criar Solicitação", Snackbar.LENGTH_LONG).show();
@@ -215,7 +223,6 @@ public class ActivityMain extends AppCompatActivity
     }
 
     public void onNovaSolicitacaoButton(View view){
-        //Set the fragment initially
         FragmentNovaSolicitacao fragment = new FragmentNovaSolicitacao();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
